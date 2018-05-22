@@ -14,7 +14,7 @@ if !filereadable(vundle_readme)
     silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
     let vinstall=1
 endif
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 "Bundles
@@ -138,3 +138,8 @@ let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 if isdirectory(s:clang_library_path)
     let g:clang_library_path=s:clang_library_path
 endif
+let g:AutoPairsMapCR = 0
+imap <silent><CR> <CR><Plug>AutoPairsReturn
+
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++14 -stdlib=libc++'
